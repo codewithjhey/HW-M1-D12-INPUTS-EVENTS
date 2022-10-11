@@ -136,8 +136,8 @@
       */
 
       const firstUlDisappear = function () {
-        document.querySelector("#firstlist")
-        firstUlDisappear.remove()
+        const firstUl = document.querySelectorAll("ul")[0]
+        firstUl.style.display = "none"
       }
 
       firstUlDisappear()
