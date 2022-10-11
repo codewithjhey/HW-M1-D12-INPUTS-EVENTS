@@ -34,7 +34,7 @@
 
       <a href="https://epicode.it">This link goes to Epicode</a>
 
-      <div>
+      <div function(event)>
         <p>This text is just for the exercise</p>
       </div>
 
@@ -47,7 +47,7 @@
       </div>
     </div>
 
-    <div>
+    <div function(event)>
       <p>And this text is just for the exercise too!</p>
       <h2 style="color: red">
         Save this page on your computer and open it with VSCode to get the
@@ -62,55 +62,85 @@
       const changeTitle = function (newTitle) {
         document.getElementById("main-title").innerText = newTitle
       }
-      console.log(changeTitle)
+      changeTitle("This is a New Title for Inputs and Events!")
 
       /* EXERCISE 2
        Write a function for changing the class of the title of the page in "myHeading".
       */
 
       const addClassToTitle = function () {
-        //
+        document.getElementById("main-title").classList.add("myHeading")
       }
+      addClassToTitle()
 
       /* EXERCISE 3
        Write a function for changing the text of only the p which are children of a div.
       */
 
-      const changePcontent = function () {
-        //
-      }
+      /* const changePcontent = function () {
+        document.querySelectorAll("div > p")
+
+        changePcontent = p
+        for (let i = 0; p.length; i++) {
+          p[i].addEventListener("click", function () {
+            console.log("Text = {p[i].innerText}")
+          })
+        }
+    
+      changePcontent("Change me")
 
       /* EXERCISE 4
        Write a function for changing the href property of every link to https://www.google.com
       */
 
       const changeUrls = function () {
-        //
+        let newUrl = document.getElementsByTagName("a")
+
+        for (i = 0; i < newUrl.length; i++) {
+          newUrl[i].href = "https://www.google.com/"
+          newUrl[i].target = "_blank"
+          newUrl[i].innerText = "link changed"
+        }
       }
+
+      changeUrls()
 
       /* EXERCISE 5
        Write a function for adding a new list item in the second unordered list.
       */
 
-      const addToTheSecond = function (content) {
-        //
+      const addToTheSecond = function (content2) {
+        let newLi = document.createElement("li")
+        newLi.innerText = content2
+        let parentUl = document.querySelector("#secondList")
+
+        parentUl.appendChild(newLi)
       }
+      addToTheSecond("Yet a just added item")
 
       /* EXERCISE 6
        Write a function for adding a second paragraph to the first div.
       */
 
-      const addParagraph = function (content) {
-        //
+      const addParagraph = function (content3) {
+        let newP = document.createElement("p")
+        newP.innerText = content3
+
+        let parentDiv = document.querySelector("div p")
+        parentDiv.appendChild(newP)
       }
+      addParagraph("This is a newly added Paagraph.")
 
       /* EXERCISE 7
        Write a function for making the first unordered list disappear.
       */
 
       const firstUlDisappear = function () {
-        //
+        document.querySelector("#firstlist")
+        firstUlDisappear.remove()
       }
+
+      firstUlDisappear()
 
       /* EXERCISE 8
        Write a function for making the background of every unordered list green.
