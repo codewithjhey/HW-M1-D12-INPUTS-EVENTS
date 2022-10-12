@@ -175,7 +175,7 @@
         return "rgb(" + red + ", " + green + ", " + blue + ")"
       }
 
-      const makeItClickable = function () {
+      const makeItClickable = function (event) {
         const randomColor = getHeadingColor()
         const clicked = event.target
         let title = document.getElementById("main-title")
@@ -186,13 +186,11 @@
           Change the footer text with something else when the user clicks on it.
          */
 
-      const changeFooterText = function () {
-        const footer = document.querySelector("#footer")
-        const clicked = event.target
-        footer.innerText = "This footer has been changed"
+      const changeMyFooterText = function () {
+        const myFooter = document.querySelector("#footer")
+        const clickedFooter = event.target
+        myFooter.innerText = "This footer changed"
       }
-
-      /* EXERCIS
 
       /* EXERCISE 11
           Attach an event listener to the input field in the page that changes the text of the page's subtitle
